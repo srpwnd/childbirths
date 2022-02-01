@@ -1,4 +1,5 @@
 airflow/logs
+airflow/dags/__pycache__
 airflow/airflow-webserver.pid
 airflow/airflow.cfg
 airflow/airflow.db
