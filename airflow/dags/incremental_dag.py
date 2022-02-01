@@ -2,6 +2,7 @@ from datetime import datetime
 
 from airflow import DAG
 from airflow.operators.bash import BashOperator
+from airflow_dbt.operators.dbt_operator import DbtRunOperator
 
 dag = DAG(
     dag_id='incremental_dag',
@@ -23,4 +24,9 @@ ext2 = BashOperator(
     dag=dag,
 )
 
-ext1 >> ext2
+tr = DbtRunOperator(
+    task_id='dbt_run',
+    dag=dag,
+)
+
+ext1 >> ext2 >> tr
