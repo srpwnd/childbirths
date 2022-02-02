@@ -5,11 +5,11 @@ from airflow.operators.bash import BashOperator
 from airflow_dbt.operators.dbt_operator import DbtRunOperator
 
 dag = DAG(
-    dag_id='test_dag',
+    dag_id='full_load_dag',
     schedule_interval=None,
     start_date=datetime(2022, 1, 1),
     catchup=False,
-    tags=['childbirths'],
+    tags=['childbirths', 'full_load'],
 )
 
 ext1 = BashOperator(
