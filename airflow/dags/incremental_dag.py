@@ -6,7 +6,7 @@ from airflow_dbt.operators.dbt_operator import DbtRunOperator
 
 dag = DAG(
     dag_id='incremental_dag',
-    schedule_interval=None,
+    schedule_interval='0 0 * * *',
     start_date=datetime(2022, 1, 1),
     catchup=False,
     tags=['childbirths', 'incremental'],

@@ -61,7 +61,8 @@ services:
       AIRFLOW__CORE__PARALLELISM: 4
       AIRFLOW__CORE__DAG_CONCURRENCY: 4
       AIRFLOW__CORE__MAX_ACTIVE_RUNS_PER_DAG: 4
-      # AIRFLOW__ADMIN__HIDE_SENSITIVE_VARIABLE_FIELDS: False
+      AIRFLOW__CORE__LOAD_EXAMPLES: false
+      AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: false
       # Postgres details need to match with the values defined in the postgres service
       POSTGRES_USER: airflowuser
       POSTGRES_PASSWORD: pssd
